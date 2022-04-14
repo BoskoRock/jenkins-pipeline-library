@@ -12,5 +12,10 @@ node {
 		sh "git clone https://github.com/BoskoRock/WebGoat.git"
 		sh "ls"
 	}
+	stage("Build WebGoat application){
+		sh "cd WebGoat"
+		sh "ls"
+		sh "mvn clean install"
+	}
     
 }
