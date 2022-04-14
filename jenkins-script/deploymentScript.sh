@@ -15,9 +15,7 @@ node {
 	stage("Build WebGoat application"){
 		sh "cd WebGoat"
 		sh "ls"
-		withMaven {
-			sh "mvn clean install"
-			}
+	    sh "mvn clean install"
 	}
     
 }
