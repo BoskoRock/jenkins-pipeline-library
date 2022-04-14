@@ -13,10 +13,11 @@ node {
 		sh "ls"
 	}
 	stage("Build WebGoat application"){
-		sh "sudo yum install maven"
 		sh "cd WebGoat"
 		sh "ls"
-		sh "mvn clean install"
+		withMaven {
+			sh "mvn clean install"
+			}
 	}
     
 }
