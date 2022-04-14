@@ -14,7 +14,7 @@ node {
 	}
 	stage("Build WebGoat application"){
 	        sh "export MAVEN_HOME=/usr/share/maven"
-                sh "export PATH=$PATH:$MAVEN_HOME/bin"
+                sh "export PATH=$PATH:/usr/share/maven/bin"
                 sh "mvn --version"
 		sh "cd WebGoat"
 		sh "ls"
