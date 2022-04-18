@@ -24,16 +24,19 @@ pipeline {
 		stage("Run tests"){
 			// run unit tests
 			steps{
+				sh "ls"
 			}
 		}
 		stage("Push image"){
 			// push image to public docker-hub
 			steps{
+				sh "ls"
 			}
 		}
 		stage("Deploy to swarm"){
 			// deploy to swarm
 			steps{
+				sh "ls"
 			}
 		}
 	}
