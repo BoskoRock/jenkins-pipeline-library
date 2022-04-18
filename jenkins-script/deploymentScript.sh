@@ -5,6 +5,8 @@ node {
 		sh "ls"
 		sh "cd WebGoat"
 		sh "ls"
+		sh "cd WebGoat"
+		sh "ls"
 	}
 	stage("Build WebGoat application"){
 		// build Webgoat using maven
