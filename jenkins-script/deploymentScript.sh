@@ -1,8 +1,8 @@
 pipeline {	
 	agent any
 	tools{
-		maven 'Maven 3.8.5' 
-        	jdk 'jdk8'
+		maven 'maven' 
+        	jdk 'java'
 	}
 	stages{
 		stage("Clone WebGoat repo"){
@@ -23,12 +23,18 @@ pipeline {
 		}
 		stage("Run tests"){
 			// run unit tests
+			steps{
+			}
 		}
 		stage("Push image"){
 			// push image to public docker-hub
+			steps{
+			}
 		}
 		stage("Deploy to swarm"){
 			// deploy to swarm
+			steps{
+			}
 		}
 	}
     
