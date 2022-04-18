@@ -1,4 +1,8 @@
-node {	
+pipeline {	
+	tools{
+	 maven 'Maven 3.8.5' 
+        jdk 'jdk8'
+	}
 	stage("Clone WebGoat repo"){
 		sh "rm -r WebGoat"
 		sh "git clone https://github.com/BoskoRock/WebGoat.git"
