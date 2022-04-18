@@ -1,7 +1,9 @@
 node {	
 	stage("Clone WebGoat repo"){
-		//sh "rm -r WebGoat"
+		sh "rm -r WebGoat"
 		sh "git clone https://github.com/BoskoRock/WebGoat.git"
+		sh "ls"
+		sh "cd WebGoat"
 		sh "ls"
 	}
 	stage("Build WebGoat application"){
