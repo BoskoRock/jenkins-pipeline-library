@@ -1,4 +1,5 @@
 node {	
+	agent any
 	tools{
 		maven 'Maven 3.8.5' 
         	jdk 'jdk8'
