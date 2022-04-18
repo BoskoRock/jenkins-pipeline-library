@@ -3,13 +3,12 @@ node {
 		sh "rm -r WebGoat"
 		sh "git clone https://github.com/BoskoRock/WebGoat.git"
 		sh "ls"
-		sh "cd WebGoat"
-		sh "ls"
-		sh "cd WebGoat"
-		sh "ls"
 	}
 	stage("Build WebGoat application"){
-		// build Webgoat using maven
+		dir("${env.WORKSPACE}/WebGoat"){
+   			 sh "pwd"
+			 sh "ls"
+		}
 	}
 	stage("Run tests"){
 		// run unit tests
