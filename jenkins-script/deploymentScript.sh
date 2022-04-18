@@ -8,6 +8,7 @@ node {
 		dir("${env.WORKSPACE}/WebGoat"){
    			 sh "pwd"
 			 sh "ls"
+			 sh "mvn clean install"
 		}
 	}
 	stage("Run tests"){
