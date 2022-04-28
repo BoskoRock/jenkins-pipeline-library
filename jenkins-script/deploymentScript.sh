@@ -7,9 +7,9 @@ pipeline {
 	stages{
 		stage("Install Java"){
 			steps{
-				sh "sudo add-apt-repository ppa:linuxuprising/java"
-				sh "sudo apt update"
-				sh "sudo apt install oracle-java15-installer"
+				sh "add-apt-repository ppa:linuxuprising/java"
+				sh "apt update"
+				sh "apt install oracle-java15-installer"
 			}
 		}
 		stage("Clone WebGoat repo"){
