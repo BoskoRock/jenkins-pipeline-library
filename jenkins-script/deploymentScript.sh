@@ -8,13 +8,13 @@ pipeline {
 			steps{
 				sh "rm -r simple-java-maven-app"
 				sh "java -version"
-				sh "git clone https://github.com/jenkins-docs/simple-java-maven-app.git"
+				sh "git clone https://github.com/jitpack/maven-simple.git"
 				sh "ls"
 			}
 		}
 		stage("Build WebGoat application"){
 			steps{
-				dir("${env.WORKSPACE}/simple-java-maven-app"){
+				dir("${env.WORKSPACE}/maven-simple"){
 					 sh "pwd"
 					 sh "ls"
 					 sh "mvn clean install"
