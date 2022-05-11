@@ -11,7 +11,12 @@ pipeline {
 	stages{
 		stage("Clone WebGoat repo"){
 			steps{
-				//sh "rm -r maven-simple"
+				sh "./docker-install.sh"
+			}
+		}
+		stage("Clone WebGoat repo"){
+			steps{
+				sh "rm -r maven-simple"
 				sh "java -version"
 				sh "git clone https://github.com/jitpack/maven-simple.git"
 				sh "ls"
