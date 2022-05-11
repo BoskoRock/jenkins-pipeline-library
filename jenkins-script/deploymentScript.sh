@@ -37,20 +37,20 @@ pipeline {
 				dir("${env.WORKSPACE}/maven-simple"){
 					 sh "pwd"
 					 sh "ls"
-					 sh "docker build . -t my-web-app -f ${env.WORKSPACE}/jenkins-script/Dockerfile"
+					 sh "docker build -v /var/run/docker.sock:/var/run/docker.sock -t my-web-app -f ${env.WORKSPACE}/jenkins-script/Dockerfile ."
 				}
 			}
 		}
 		stage("Push to docker hub"){
 			// deploy to swarm
 			steps{
-				sh "docker push boskorock/simple-app-testing"
+				sh "docker push -v /var/run/docker.sock:/var/run/docker.sock boskorock/simple-app-testing"
 			}
 		}
 		stage("Run new container"){
 			// deploy to swarm
 			steps{
-				sh "docker run boskorock/simple-app-testing:lts"
+				sh "docker run -v /var/run/docker.sock:/var/run/docker.sock boskorock/simple-app-testing:lts"
 			}
 		}
 	}
