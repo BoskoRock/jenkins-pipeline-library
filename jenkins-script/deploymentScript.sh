@@ -24,7 +24,11 @@ pipeline {
 		stage("Run tests"){
 			// run unit tests
 			steps{
-				sh "mvn test"
+				dir("${env.WORKSPACE}/maven-simple"){
+					 sh "pwd"
+					 sh "ls"
+					 sh "mvn clean test"
+				}
 			}
 		}
 		stage("Create image"){
