@@ -8,7 +8,7 @@ pipeline {
 			steps{
 				//sh "rm -r WebGoat"
 				sh "java -version"
-				sh "git clone https://github.com/BoskoRock/WebGoat.git"
+				sh "git clone https://github.com/jenkins-docs/simple-java-maven-app.git"
 				sh "ls"
 			}
 		}
