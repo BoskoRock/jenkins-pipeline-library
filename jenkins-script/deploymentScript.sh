@@ -6,7 +6,8 @@ pipeline {
 	stages{
 		stage("Clone WebGoat repo"){
 			steps{
-				//sh "rm -r WebGoat"
+				sh "rm -r WebGoat"
+				sh "java -version"
 				sh "git clone https://github.com/BoskoRock/WebGoat.git"
 				sh "ls"
 			}
