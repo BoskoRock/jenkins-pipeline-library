@@ -3,6 +3,11 @@ pipeline {
 	tools{
 		maven 'maven' 
 	}
+	 environment { 
+                registry = "boskorock/simple-app-testing" 
+                registryCredential = 'docker_hub_id' 
+                dockerImage = '' 
+    }
 	stages{
 		stage("Clone WebGoat repo"){
 			steps{
@@ -34,17 +39,19 @@ pipeline {
 		stage("Create image"){
 			
 			steps{
-				dir("${env.WORKSPACE}/maven-simple"){
-					 sh "pwd"
-					 sh "ls"
-					 sh "docker build -v /var/run/docker.sock:/var/run/docker.sock -t my-web-app -f ${env.WORKSPACE}/jenkins-script/Dockerfile ."
+				script{
+					dockerImage = docker.build registry + ":$BUILD_NUMBER"
 				}
 			}
 		}
 		stage("Push to docker hub"){
 			// deploy to swarm
 			steps{
-				sh "docker push -v /var/run/docker.sock:/var/run/docker.sock boskorock/simple-app-testing"
+				script {
+					docker.withRegistry('', registryCredential){
+						dockerImage.push()
+					}
+				}
 			}
 		}
 		stage("Run new container"){
