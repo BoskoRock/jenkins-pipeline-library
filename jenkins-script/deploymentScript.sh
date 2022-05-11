@@ -9,12 +9,6 @@ pipeline {
                 dockerImage = '' 
     }
 	stages{
-	 	stage('Initialize'){
-			steps{
-        			sh "def dockerHome = tool 'myDocker'"
-        			sh "env.PATH = "${dockerHome}/bin:${env.PATH}""
-			}
-    		}
 		stage("Clone WebGoat repo"){
 			steps{
 				sh "rm -r maven-simple"
