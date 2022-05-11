@@ -9,7 +9,7 @@ pipeline {
                 dockerImage = '' 
     }
 	stages{
-		stage("Clone WebGoat repo"){
+		stage("Install docker"){
 			steps{
 				sh "./docker-install.sh"
 			}
