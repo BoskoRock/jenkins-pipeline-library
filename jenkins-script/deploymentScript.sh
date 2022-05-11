@@ -24,16 +24,26 @@ pipeline {
 		stage("Run tests"){
 			// run unit tests
 			steps{
-				sh "ls"
+				sh "mvn test"
 			}
 		}
-		stage("Push image"){
-			// push image to public docker-hub
+		stage("Create image"){
+			
+			steps{
+				dir("${env.WORKSPACE}/maven-simple"){
+					 sh "pwd"
+					 sh "ls"
+					 sh "docker build . -t my-web-app -f ${env.WORKSPACE}/jenkins-script/Dockerfile"
+				}
+			}
+		}
+		stage("Push to docker hub"){
+			// deploy to swarm
 			steps{
 				sh "ls"
 			}
 		}
-		stage("Deploy to swarm"){
+		stage("Run new container"){
 			// deploy to swarm
 			steps{
 				sh "ls"
