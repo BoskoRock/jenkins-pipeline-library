@@ -9,13 +9,6 @@ pipeline {
                 dockerImage = '' 
     }
 	stages{
-		stage("Install docker"){
-			steps{
-				sh "ls"
-				sh "chmod +x jenkins-script/docker-install.sh"
-				sh "./jenkins-script/docker-install.sh"
-			}
-		}
 		stage("Clone WebGoat repo"){
 			steps{
 				sh "rm -r maven-simple"
