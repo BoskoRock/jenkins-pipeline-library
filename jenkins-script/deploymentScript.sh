@@ -1,17 +1,10 @@
 pipeline {	
 	agent any
-	tools{
+	/*tools{
 		maven 'maven' 
         	jdk 'java'
-	}
+	}*/
 	stages{
-		stage("Install Java"){
-			steps{
-				sh "add-apt-repository ppa:linuxuprising/java"
-				sh "apt update"
-				sh "apt install oracle-java15-installer"
-			}
-		}
 		stage("Clone WebGoat repo"){
 			steps{
 				sh "rm -r WebGoat"
