@@ -2,7 +2,6 @@ pipeline {
 	agent any
 	tools{
 		maven 'maven' 
-		docker 'myDocker'
 	}
 	 environment { 
                 registry = "boskorock/simple-app-testing" 
@@ -10,6 +9,10 @@ pipeline {
                 dockerImage = '' 
     }
 	stages{
+	 	stage('Initialize'){
+        		def dockerHome = tool 'myDocker'
+        		env.PATH = "${dockerHome}/bin:${env.PATH}"
+    		}
 		stage("Clone WebGoat repo"){
 			steps{
 				sh "rm -r maven-simple"
