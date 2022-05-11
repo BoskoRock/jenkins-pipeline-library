@@ -6,7 +6,7 @@ pipeline {
 	stages{
 		stage("Clone WebGoat repo"){
 			steps{
-				sh "rm -r simple-java-maven-app"
+				sh "rm -r maven-simple"
 				sh "java -version"
 				sh "git clone https://github.com/jitpack/maven-simple.git"
 				sh "ls"
