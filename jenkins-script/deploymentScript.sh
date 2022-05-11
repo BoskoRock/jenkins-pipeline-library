@@ -11,7 +11,8 @@ pipeline {
 	stages{
 		stage("Install docker"){
 			steps{
-				sh "./docker-install.sh"
+				sh "ls"
+				sh "./jenkins-script/docker-install.sh"
 			}
 		}
 		stage("Clone WebGoat repo"){
