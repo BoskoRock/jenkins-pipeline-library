@@ -2,6 +2,7 @@ pipeline {
 	agent any
 	tools{
 		maven 'maven' 
+		docker 'myDocker'
 	}
 	 environment { 
                 registry = "boskorock/simple-app-testing" 
