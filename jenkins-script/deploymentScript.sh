@@ -14,7 +14,7 @@ pipeline {
 		}
 		stage("Build WebGoat application"){
 			steps{
-				dir("${env.WORKSPACE}/WebGoat"){
+				dir("${env.WORKSPACE}/simple-java-maven-app"){
 					 sh "pwd"
 					 sh "ls"
 					 sh "mvn clean install"
