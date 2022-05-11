@@ -40,13 +40,13 @@ pipeline {
 		stage("Push to docker hub"){
 			// deploy to swarm
 			steps{
-				sh "ls"
+				sh "docker push boskorock/simple-app-testing"
 			}
 		}
 		stage("Run new container"){
 			// deploy to swarm
 			steps{
-				sh "ls"
+				sh "docker run boskorock/simple-app-testing:lts"
 			}
 		}
 	}
