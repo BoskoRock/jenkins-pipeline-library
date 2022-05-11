@@ -6,7 +6,7 @@ pipeline {
 	stages{
 		stage("Clone WebGoat repo"){
 			steps{
-				//sh "rm -r WebGoat"
+				sh "rm -r simple-java-maven-app"
 				sh "java -version"
 				sh "git clone https://github.com/jenkins-docs/simple-java-maven-app.git"
 				sh "ls"
