@@ -31,9 +31,14 @@ pipeline {
 					 sh "pwd"
 					 sh "ls"
 					 sh "mvn clean test"
-					 sh "cd target"
-					 sh "echo inside target"
-					 sh" ls"
+				}
+			}
+		}
+		stage("Check what is in target folder"){
+			steps{
+				dir("${env.WORKSPACE}/maven-simple/target"){
+					sh "pwd"
+					sh"ls"
 				}
 			}
 		}
