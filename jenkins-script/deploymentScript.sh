@@ -64,7 +64,7 @@ pipeline {
 		}
 		stage("Run new container"){
 			steps{
-				sh "docker run boskorock/simple-app-testing:18"
+				sh "docker run boskorock/simple-app-testing"
 			}
 		}
 	}
