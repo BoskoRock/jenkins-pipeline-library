@@ -36,7 +36,7 @@ pipeline {
 		}
 		stage("Check what is in target folder"){
 			steps{
-				dir("${env.WORKSPACE}/executable-jar-with-maven-example/target"){
+				dir("${env.WORKSPACE}/executable-jar-with-maven-example/target/generated-sources"){
 					sh "pwd"
 					sh"ls"
 				}
