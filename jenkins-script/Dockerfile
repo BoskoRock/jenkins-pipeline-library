@@ -9,4 +9,5 @@ MAINTAINER demousr@gmail.com
 
 RUN apt-get update 
 RUN apt-get install net-tools 
+RUN mkdir -p /etc/nemanja
 CMD [“echo”,”Image created”] 
