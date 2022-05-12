@@ -32,7 +32,7 @@ pipeline {
 					 sh "ls"
 					 sh "mvn clean test"
 					 sh "cd target"
-					 sh "echo "inside target"
+					 sh "echo inside target"
 					 sh" ls"
 				}
 			}
