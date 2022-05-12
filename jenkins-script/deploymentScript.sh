@@ -20,6 +20,7 @@ pipeline {
 					 sh "pwd"
 					 sh "ls"
 					 sh "mvn clean install"
+					 sh "pwd"
 				}
 			}
 		}
