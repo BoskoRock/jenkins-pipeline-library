@@ -30,13 +30,14 @@ pipeline {
 				dir("${env.WORKSPACE}/executable-jar-with-maven-example"){
 					 sh "pwd"
 					 sh "ls"
-					 sh "mvn clean test"
+					 sh "mvn clean install"
+					 sh "mvn package"
 				}
 			}
 		}
 		stage("Check what is in target folder"){
 			steps{
-				dir("${env.WORKSPACE}/executable-jar-with-maven-example/target/generated-sources"){
+				dir("${env.WORKSPACE}/executable-jar-with-maven-example/target"){
 					sh "pwd"
 					sh"ls"
 				}
