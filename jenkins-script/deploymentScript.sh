@@ -8,7 +8,7 @@ pipeline {
 	stages{
 		stage("Clone repo"){
 			steps{
-				sh "rm -r maven-simple"
+				//sh "rm -r maven-simple"
 				sh "java -version"
 				sh "git clone https://github.com/jinahya/executable-jar-with-maven-example.git"
 				sh "ls"
