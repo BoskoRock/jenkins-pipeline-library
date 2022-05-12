@@ -8,5 +8,5 @@ FROM ubuntu
 MAINTAINER demousr@gmail.com 
 
 RUN apt-get update 
-RUN apt-get install –y nginx 
+RUN apt-get install net-tools 
 CMD [“echo”,”Image created”] 
