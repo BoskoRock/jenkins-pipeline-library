@@ -10,13 +10,13 @@ pipeline {
 			steps{
 				sh "rm -r maven-simple"
 				sh "java -version"
-				sh "git clone https://github.com/jenkins-docs/simple-java-maven-app.git"
+				sh "git clone https://github.com/jinahya/executable-jar-with-maven-example.git"
 				sh "ls"
 			}
 		}
 		stage("Build application"){
 			steps{
-				dir("${env.WORKSPACE}/simple-java-maven-app"){
+				dir("${env.WORKSPACE}/executable-jar-with-maven-example"){
 					 sh "pwd"
 					 sh "ls"
 					 sh "mvn clean install"
@@ -27,7 +27,7 @@ pipeline {
 		stage("Run tests"){
 			// run unit tests
 			steps{
-				dir("${env.WORKSPACE}/simple-java-maven-app"){
+				dir("${env.WORKSPACE}/executable-jar-with-maven-example"){
 					 sh "pwd"
 					 sh "ls"
 					 sh "mvn clean test"
@@ -36,7 +36,7 @@ pipeline {
 		}
 		stage("Check what is in target folder"){
 			steps{
-				dir("${env.WORKSPACE}/simple-java-maven-app/target"){
+				dir("${env.WORKSPACE}/executable-jar-with-maven-example/target"){
 					sh "pwd"
 					sh"ls"
 				}
